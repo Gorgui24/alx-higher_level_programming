@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import string
-for letter in string.ascii_lowercase:
+for letter in range(97, 123):
     if letter != 'e' and letter != 'q':
-        print(f"{letter}", end="")
+        print("{}".format(chr(letter)), end="")
