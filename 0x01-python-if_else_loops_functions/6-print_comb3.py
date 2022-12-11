@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import string
 for numA in range(0, 9):
     for numB in range(numA + 1, 10):
         if numA == 8 and numB == 9:

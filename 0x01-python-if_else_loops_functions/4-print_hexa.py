@@ -3,5 +3,5 @@ import string
 num = 0
 while num <= 98:
     to_hex = hex(num)
-    print(f"{num} = {to_hex}")
+    print("{} = {}".format(num, to_hex))
     num = num + 1
