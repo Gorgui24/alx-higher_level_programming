@@ -3,3 +3,4 @@
 
 class Rectangle:
     """Represent a core of class"""
+    pass
