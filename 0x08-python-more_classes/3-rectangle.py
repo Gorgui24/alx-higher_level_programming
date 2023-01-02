@@ -42,3 +42,7 @@ class Rectangle:
         return (self.__height * self.__width)
     def perimeter(self):
         return ((self.__height + self.__width) * 2)
+    def str(self):
+        for i in range(0, self.__width):
+            [print("#", end="") for j in range(self.__height)]
+            print("")
