@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-'''
-Write a class MyInt that inherits from int
-'''
+'''Module for MyInt class.'''
 
 
 class MyInt(int):
+    def __eq__(self, other):
+        '''Override equals, inverting it.'''
+        return int(self) != int(other)
 
-    def __eq__(self, value):
-        return int(self) != int(value)
-
-    def __ne__(self, value):
-        return int(self) == int(value)
+    def __ne__(self, other):
+        '''Override not-equals, inverting it.'''
+        return int(self) == int(other)

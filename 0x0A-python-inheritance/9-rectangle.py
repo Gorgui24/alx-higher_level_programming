@@ -1,23 +1,16 @@
 #!/usr/bin/python3
-'''
-Write a class Rectangle
-that inherits from BaseGeometry (7-base_geometry.py).
-(task based on 8-rectangle.py)
-'''
-
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+'''Module for BaseGeometry class.'''
 
 
-class Rectangle(BaseGeometry):
-
-    def __init__(self, width, height):
-        super().integer_validator('width', width)
-        self.__width = width
-        super().integer_validator('height', height)
-        self.__height = height
-
+class BaseGeometry:
+    '''A BaseGeometry class.'''
     def area(self):
-        return self.__width * self.__height
+        '''Method to compute this area.'''
+        raise Exception('area() is not implemented')
 
-    def __str__(self):
-        return '[Rectangle] {}/{}'.format(self.__width, self.__height)
+    def integer_validator(self, name, value):
+        '''Method for validating the value.'''
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
