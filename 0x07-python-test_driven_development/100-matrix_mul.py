@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 '''
-Multiplies 2 matrices by using the module NumPy
+Multiplies 2 matrices
 '''
 
-import numpy as np
-def lazy_matrix_mul(m_a, m_b):
+
+def matrix_mul(m_a, m_b):
     '''
-    Function multiplies two matrices with numpy
+Function multiplies two matrices
     '''
     if isinstance(m_a, list) is False:
         raise TypeError('m_a must be a list')
@@ -22,7 +22,7 @@ def lazy_matrix_mul(m_a, m_b):
     if not m_b:
         raise ValueError("m_b can't be empty")
     if not all(isinstance(i, float) or isinstance(i, int)
-            for l in m_a for i in l):
+               for l in m_a for i in l):
         raise TypeError('m_a should contain only integers or floats')
     if not all(isinstance(i, float) or isinstance(i, int)
                for l in m_b for i in l):
@@ -34,7 +34,7 @@ def lazy_matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError('m_a and m_b can\'t be multiplied')
 
-    a = np.array(m_a)
-    b = np.array(m_b)
-    c = np.dot(a, b)
-    return c
+    return [[
+        sum(a * b for a, b in zip(a_row, b_col))
+        for b_col in zip(*m_b)]
+            for a_row in m_a]

@@ -1,20 +1,18 @@
 #!/usr/bin/python3
-"""Define text_indentation"""
+"""
+function that prints a text with 2 new lines after
+each of these characters: ., ?
+"""
 def text_indentation(text):
-    """Core of class"""
+    """
+    Prints a new line
+    """
     if not isinstance(text, str):
-        raise TypeError("text must be a string")
-    c = 0
-    while c < len(text) and text[c] == ' ':
-        c += 1
-    while c < len(text):
-        print(text[c], end="")
-        if text[c] == '\n' or text[c] in ".?:":
-            if text[c] in ".?:":
-                print('\n')
-            c += 1
-            while c < len(text) and text[c] == ' ':
-                c += 1
-            continue
-        c += 1
-
+        raise TypeError('text must be a string')
+    punc = text.replace('.', '.\n\n')
+    punc = punc.replace('?', '?\n\n')
+    punc = punc.replace(':', ':\n\n')
+    newLine = punc.split('\n')
+    for line in range(len(newLine)):
+        print("{}".format(newLine[line].strip()),
+              end=("" if (line == (len(newLine) - 1)) else '\n'))
