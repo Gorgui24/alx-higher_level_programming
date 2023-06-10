@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
+Write a class Rectangle that defines a rectangle by: (based on 3-rectangle.py)
 """
 
 
@@ -29,7 +29,7 @@ class Rectangle:
         width setter
         """
         if not isinstance(value, int):
-            raise TypeError('width must be an integer')
+            TypeError('width must be an integer')
         if value < 0:
             raise ValueError('width must be >= 0')
         self.__width = value
@@ -47,7 +47,7 @@ class Rectangle:
         width setter
         """
         if not isinstance(value, int):
-            raise TypeError('width must be an integer')
+            TypeError('width must be an integer')
         if value < 0:
             raise ValueError('width must be >= 0')
         self.__height = value
@@ -68,11 +68,21 @@ class Rectangle:
 
     def __str__(self):
         """
-        String Representation
+        String representation
         """
         string = ""
-        if self.width == 0 or self.height == 0:
-            return string
         for i in range(self.height):
             string += '#' * self.width + '\n'
         return string[:-1]
+
+    def __repr__(self):
+        """
+        Representation
+        """
+        return "Rectangle({}, {})".format(self.width, self.height)
+
+    def __del__(self):
+        """
+        Delete
+        """
+        print('Bye rectangle...')
