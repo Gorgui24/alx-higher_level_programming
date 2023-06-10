@@ -1,8 +1,18 @@
 #!/usr/bin/python3
-'''Module for from_json_string method.'''
+'''
+Write a function that creates an
+Object from a “JSON file”
+'''
+
 import json
 
 
-def from_json_string(my_str):
-    '''Method for loading object from json string.'''
-    return json.loads(my_str)
+def load_from_json_file(filename):
+    '''
+    Create object from JSON file
+    '''
+    if filename is None:
+        return
+    with open(filename, 'r', encoding='utf-8') as f:
+        json_var = json.load(f)
+        return json_var

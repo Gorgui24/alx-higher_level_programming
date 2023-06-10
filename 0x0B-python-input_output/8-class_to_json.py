@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-'''Module for load_to_json_file method.'''
-import json
+'''
+Write a function that returns
+the dictionary description with
+simple data structure (list, dictionary, string, integer and boolean)
+for JSON serialization of an object
+'''
 
 
-def load_from_json_file(filename):
-    '''Method for loading from json file.'''
-    with open(filename, "r", encoding="utf-8") as f:
-        return json.load(f)
+def class_to_json(obj):
+    '''
+    Returns dict descr. of data structure
+    '''
+
+    return vars(obj)

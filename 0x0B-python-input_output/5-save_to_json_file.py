@@ -1,8 +1,18 @@
 #!/usr/bin/python3
-'''Module for to_json_string method.'''
+'''
+Write a function that writes an
+Object to a text file, using a
+JSON representation
+'''
+
 import json
 
 
-def to_json_string(my_obj):
-    '''Method for rendering object to json string.'''
-    return json.dumps(my_obj)
+def save_to_json_file(my_obj, filename):
+    '''
+    Writes object to text file using JSON
+    '''
+    if filename is None:
+        return
+    with open(filename, 'w', encoding='utf-8') as f:
+        json_var = json.dump(my_obj, f))

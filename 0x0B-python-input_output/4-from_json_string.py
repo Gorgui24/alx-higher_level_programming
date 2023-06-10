@@ -1,8 +1,15 @@
 #!/usr/bin/python3
-'''Module for append_write method.'''
+'''
+Write a function that returns an object
+(Python data structure) represented by a
+JSON string:
+'''
+
+import json
 
 
-def append_write(filename="", text=""):
-    '''Method for reading lines from file.'''
-    with open(filename, "a", encoding="utf-8") as f:
-        return f.write(text)
+def from_json_string(my_str):
+    '''
+    Return object as JSON
+    '''
+    return json.loads(my_str)
