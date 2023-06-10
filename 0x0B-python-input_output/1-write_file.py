@@ -1,8 +1,15 @@
 #!/usr/bin/python3
-'''Module for number_of_lines method.'''
+'''
+Write a function that writes a string to a text file
+(UTF8) and returns the number of characters written:
+'''
 
 
-def number_of_lines(filename=""):
-    '''Method for reading from file.'''
-    with open(filename, "r", encoding="utf-8") as f:
-        return len(f.readlines())
+def write_file(filename="", text=""):
+    '''
+    Write to a file
+    '''
+    with open(filename, 'w', encoding='utf-8') as f:
+        file_write = f.write(text)
+        f.close()
+        return file_write

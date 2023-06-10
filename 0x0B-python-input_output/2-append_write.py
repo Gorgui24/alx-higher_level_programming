@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-'''Module for read_lines method.'''
+'''
+Write a function that appends a string
+at the end of a text file (UTF8) and returns
+the number of characters added
+'''
 
 
-def read_lines(filename="", nb_lines=0):
-    '''Method for reading lines from file.'''
-    with open(filename, "r", encoding="utf-8") as f:
-        if nb_lines <= 0:
-            print(f.read(), end="")
-            return
-
-        for line in f:
-            print(line, end="")
-            nb_lines -= 1
-            if nb_lines <= 0:
-                break
+def append_write(filename="", text=""):
+    '''
+    Append to a file
+    '''
+    with open(filename, 'a+', encoding='utf-8') as f:
+        append_file = f.write(text)
+        f.close()
+        return append_file
